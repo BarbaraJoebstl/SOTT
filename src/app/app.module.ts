@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgReduxModule, NgRedux} from 'ng2-redux';
-import {IAppState, rootReducer} from './store';
+import {IAppState, rootReducer, INITIAL_STATE} from './store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatAutocompleteModule,
@@ -93,7 +93,7 @@ RouterModule.forRoot([
 })
 export class AppModule { 
   constructor(ngRedux: NgRedux<IAppState>) {
-    ngRedux.configureStore(rootReducer, {});
+    ngRedux.configureStore(rootReducer, INITIAL_STATE);
   }
 }
 
